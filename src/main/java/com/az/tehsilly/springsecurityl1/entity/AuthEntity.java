@@ -1,9 +1,7 @@
 package com.az.tehsilly.springsecurityl1.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.az.tehsilly.springsecurityl1.constants.Role;
+import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -13,6 +11,7 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Builder
+@Table(name = "user")
 public class AuthEntity {
 
     @Id
@@ -24,4 +23,9 @@ public class AuthEntity {
     String email;
 
     String password;
+
+    @Enumerated(EnumType.STRING)
+    Role role;
+
+    boolean enabled = true;
 }
