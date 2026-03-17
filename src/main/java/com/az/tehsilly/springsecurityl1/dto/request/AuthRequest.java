@@ -20,7 +20,7 @@ public class AuthRequest {
 
     @NotBlank(message = "Username must be not empty!")
     @Size(min = 5, max = 25)
-    String username;
+    String userName;
 
 
     @NotBlank(message = "Password must be not empty!")
